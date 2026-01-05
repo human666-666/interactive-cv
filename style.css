@@ -1,0 +1,118 @@
+.pattern-dots-sm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+
+.categories {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #383f56;
+}
+
+.pharm {
+  font-size: 12px;
+  font-weight: normal;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.cert-list>div {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform .25s ease, box-shadow .75s ease, background .25s ease;
+  cursor: pointer;
+}
+
+.pharm li {
+  background: #f0f0f0;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.cert-list>div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background: #f7f7ff;
+}
+
+.cert-reveal {
+  display: none;
+  /* will be controlled later */
+  margin-top: 20px;
+  padding: 15px;
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.cert-list>div:hover .cert-reveal {
+  display: grid;
+}
+
+.cert-reveal {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  padding: 15px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.cert-reveal img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform .2s ease;
+}
+
+.cert-reveal img:hover {
+  transform: scale(2);
+}
+
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  /* 3 per row */
+  gap: 40px;
+  /* more spacing between cards */
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 160px;     
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cert-list>div h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
