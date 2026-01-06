@@ -46,7 +46,7 @@
   cursor: pointer;
 }
 
-.pharm p {
+.pharm p, .editor p, .transcriber p {
   background: #f0f0f0;
   padding: 15px 20px;
   border-radius: 8px;
@@ -216,4 +216,5 @@
   /* optional: prevent overflow from pushing layout too much */
   max-width: 140%;
 }
+
 
