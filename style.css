@@ -55,7 +55,8 @@
   line-height: 1.5;
 }
 
-.UoN cert-reveal img:hover {
+/* Fixed: add missing dot so the selector actually matches */
+.UoN .cert-reveal img:hover {
   transform: scale(1);
 }
 
@@ -195,6 +196,10 @@
   transition: transform .4s ease;
 }
 
+/* ------------------------------------------------------------------
+   Minimal override: reduce image-hover expansion for the Web & IT sections
+   Only applies when the images live inside an element with class .Web or .IT
+   ------------------------------------------------------------------ */
 .Web .cert-reveal img:hover,
 .IT .cert-reveal img:hover {
   /* reduced scale so 3-image rows don't blow up too large */
@@ -209,5 +214,4 @@
   transform-origin: center center;
   /* optional: prevent overflow from pushing layout too much */
   max-width: 140%;
-
 }
