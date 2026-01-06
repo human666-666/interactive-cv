@@ -46,13 +46,17 @@
   cursor: pointer;
 }
 
-.pharm li {
+.pharm p {
   background: #f0f0f0;
   padding: 15px 20px;
   border-radius: 8px;
   margin-top: 10px;
   margin-bottom: 10px;
   line-height: 1.5;
+}
+
+.UoN cert-reveal img:hover {
+  transform: scale(1);
 }
 
 .cert-list>div:hover {
@@ -85,16 +89,50 @@
 }
 
 .cert-reveal img {
+  overflow: visible;
+  display: block;
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: auto;
-  border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform .2s ease;
+
+  border-radius: 10px;
+  background-color: #eeeeee;
+  border-bottom: 5px solid #cccccc;
+
+  /* transitions for transform and mask movement */
+  transition: transform .25s ease, mask-position .9s ease, -webkit-mask-position .9s ease;
+
+  /* Base mask: mostly fully visible (white), with a thin translucent stripe that will act as the shine */
+  -webkit-mask-image: linear-gradient(135deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 40%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 1) 60%,
+      rgba(255, 255, 255, 1) 100%);
+  -webkit-mask-size: 240% 240%;
+  -webkit-mask-position: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+
+  mask-image: linear-gradient(135deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 40%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 1) 60%,
+      rgba(255, 255, 255, 1) 100%);
+  mask-size: 240% 240%;
+  mask-position: 100% 100%;
+  mask-repeat: no-repeat;
 }
 
 .cert-reveal img:hover {
   transform: scale(2);
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+  z-index: 999;
 }
+
 
 .cert-list {
   display: grid;
@@ -115,4 +153,44 @@
   font-size: 1.3rem;
   margin-bottom: 10px;
   word-wrap: break-word;
+}
+
+.stack {
+  position: relative;
+  width: 200px;
+  height: 140px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.stack img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform .4s ease, opacity .4s ease;
+}
+
+.stack img:nth-child(1) {transform: translate(0px, 0px); }
+.stack img:nth-child(2) {transform: translate(6px, 6px); }
+.stack img:nth-child(3) {transform: translate(12px, 12px); }
+.stack img:nth-child(4) {transform: translate(18px, 18px); }
+.stack img:nth-child(5) {transform: translate(24px, 24px); }
+.stack img:nth-child(6) {transform: translate(30px, 30px); }
+
+.stack:hover img {
+  opacity: 1;
+}
+
+.stack:hover img:nth-child(1) {transform: translate(-90px, 320px); }
+.stack:hover img:nth-child(2) {transform: translate(100px, -60px); }
+.stack:hover img:nth-child(3) {transform: translate(-30px, 170px); }
+.stack:hover img:nth-child(4) {transform: translate(-300px, 100px); }
+.stack:hover img:nth-child(5) {transform: translate(-100px, 40px); }
+.stack:hover img:nth-child(6) {transform: translate(-200px, -100px); }
+
+.stack:hover {
+  transform: rotateX(8deg) rotateY(8deg);
+  transition: transform .4s ease;
 }
