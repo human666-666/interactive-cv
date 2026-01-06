@@ -20,7 +20,7 @@
   color: #383f56;
 }
 
-.pharm {
+.pharm, .editor, .transcriber {
   font-size: 12px;
   font-weight: normal;
   padding-left: 16px;
@@ -216,5 +216,6 @@
   /* optional: prevent overflow from pushing layout too much */
   max-width: 140%;
 }
+
 
 
