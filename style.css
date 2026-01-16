@@ -202,7 +202,8 @@
    ------------------------------------------------------------------ */
 .Web .cert-reveal img:hover,
 .IT .cert-reveal img:hover,
-.Cloud .cert-reveal img:hover {
+.Cloud .cert-reveal img:hover,
+.SQL .cert-reveal img:hover, {
   /* reduced scale so 3-image rows don't blow up too large */
   transform: scale(1.25) !important;
   /* keep the mask movement on hover */
@@ -216,6 +217,7 @@
   /* optional: prevent overflow from pushing layout too much */
   max-width: 140%;
 }
+
 
 
 
