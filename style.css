@@ -204,19 +204,15 @@
 .IT .cert-reveal img:hover,
 .Cloud .cert-reveal img:hover,
 .SQL .cert-reveal img:hover, {
-  /* reduced scale so 3-image rows don't blow up too large */
-  transform: scale(1.25) !important;
-  /* keep the mask movement on hover */
+  transform: scale(0.6);
   -webkit-mask-position: 0 0;
   mask-position: 0 0;
   z-index: 999;
-  /* keep the same transition timing */
   transition: transform .25s ease, mask-position .9s ease, -webkit-mask-position .9s ease;
-  /* make expansion originate from center to look nicer */
   transform-origin: center center;
-  /* optional: prevent overflow from pushing layout too much */
   max-width: 140%;
 }
+
 
 
 
